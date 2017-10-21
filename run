@@ -1,0 +1,3 @@
+#!/bin/bash
+ant package &&
+java -jar xobot.jar java-1b.cl.cam.ac.uk 15001

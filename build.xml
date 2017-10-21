@@ -1,0 +1,14 @@
+<project default="compile">
+    <target name="compile">
+        <mkdir dir="bin"/>
+        <javac srcdir="src" destdir="bin"/>
+    </target>
+
+    <target name="package" depends="compile">
+        <jar basedir="bin" destfile="xobot.jar">
+            <manifest>
+                <attribute name="Main-Class" value="uk.ac.cam.kc506.fjava.xobot.XOBot"/>
+            </manifest>
+        </jar>
+    </target>
+</project>
