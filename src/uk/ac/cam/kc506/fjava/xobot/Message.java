@@ -45,8 +45,8 @@ public abstract class Message
         {
             try
             {
-                int x = Integer.parseUnsignedInt(segments[2]) - 1;
-                int y = Integer.parseUnsignedInt(segments[3]) - 1;
+                int x = Integer.parseUnsignedInt(segments[2]);
+                int y = Integer.parseUnsignedInt(segments[3]);
                 return new PlayMessage(ip, new Position(x, y));
             }
             catch (NumberFormatException e) {} // Allow it to fall through
