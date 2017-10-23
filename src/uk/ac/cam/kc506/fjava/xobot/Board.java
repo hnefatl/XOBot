@@ -18,15 +18,19 @@ public class Board
 
     public Player getCell(Position p) throws InvalidPosition
     {
-        if (p.x >= 0 && p.x < SIZE && p.y >= 0 && p.y < SIZE)
-            return board[p.y][p.x];
+        int x = p.x - 1;
+        int y = p.y - 1;
+        if (x >= 0 && x < SIZE && y >= 0 && y < SIZE)
+            return board[y][x];
         else
             throw new InvalidPosition(p);
     }
     public void setCell(Position p, Player v) throws InvalidPosition
     {
-        if (p.x >= 0 && p.x < SIZE && p.y >= 0 && p.y < SIZE)
-            board[p.y][p.x] = v;
+        int x = p.x - 1;
+        int y = p.y - 1;
+        if (x >= 0 && x < SIZE && y >= 0 && y < SIZE)
+            board[y][x] = v;
         else
             throw new InvalidPosition(p);
     }
