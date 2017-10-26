@@ -29,9 +29,16 @@ public class StartMessage extends Message
         }
         else
         {
-            games.addGame(getSender(), otherPlayer);
-            r.add("Game between " + getSender() + " and " + otherPlayer + " started.");
-            r.addAll(games.getGame(getSender()).board.toRows());
+            String busyPlayer = games.addGame(getSender(), otherPlayer);
+            if (busyPlayer != null)
+            {
+                r.add(busyPlayer + " is already in a game.");
+            }
+            else
+            {
+                r.add("Game between " + getSender() + " and " + otherPlayer + " started.");
+                r.addAll(games.getGame(getSender()).board.toRows());
+            }
         }
 
         return r;

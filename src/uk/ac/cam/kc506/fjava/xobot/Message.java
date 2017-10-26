@@ -41,6 +41,10 @@ public abstract class Message
         {
             return new StopMessage(ip);
         }
+        else if (command.equals(Constants.REFRESH_COMMAND))
+        {
+            return new RefreshMessage(ip);
+        }
         else if (segments.length >= 4) // Try to parse a "play" implicit command - that is, just a position
         {
             try
